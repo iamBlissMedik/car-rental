@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import CarCard from "./CarCard";
 import { CarList } from "@/types/carsList";

@@ -3,7 +3,7 @@ import { UserButton } from "@clerk/nextjs";
 
 const NavBar = () => {
   return (
-    <div className="flex items-center justify-between  p-3 px-5 shadow-sm border-b-[1px]">
+    <div className="flex items-center justify-between  p-3 px-5 shadow-sm border-b-[1px] sticky top-0 bg-white">
       <Image src="/logo.png" alt="logo" width={100} height={100} />
       <div className="flex gap-5">
         <h2

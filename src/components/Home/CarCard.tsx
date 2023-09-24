@@ -1,3 +1,4 @@
+"use client";
 import { CarList } from "@/types/carsList";
 import Image from "next/image";
 import { FaGasPump } from "react-icons/fa";
@@ -43,7 +44,7 @@ border-blue-500 "
         <div className="text-center text-gray-500">
           <PiSteeringWheelFill className="w-full text-[22px] mb-2" />
           <h2 className="line-clamp-5 text-[14px] font-light">
-            {carDetails?.carType}
+            {carDetails?.carType.substr}
           </h2>
         </div>
         <div className="text-center text-gray-500">

@@ -5,8 +5,13 @@ import { useEffect, useState } from "react";
 type CarsFilterOptionProp = {
   carsList: CarList[];
   setBrand: (value: string) => void;
+  orderCarList: (value: number) => void;
 };
-const CarsFilterOption = ({ carsList, setBrand }: CarsFilterOptionProp) => {
+const CarsFilterOption = ({
+  carsList,
+  setBrand,
+  orderCarList,
+}: CarsFilterOptionProp) => {
   const [brandList, setBrandList] = useState<any>();
   const BrandSet = new Set();
 
@@ -32,7 +37,7 @@ const CarsFilterOption = ({ carsList, setBrand }: CarsFilterOptionProp) => {
         <select
           className="select select-bordered
             w-full max-w-xs"
-          // onChange={(e) => orderCarList(e.target.value)}
+          onChange={(e) => orderCarList(parseInt(e.target.value))}
         >
           <option disabled selected>
             Price
