@@ -1,4 +1,27 @@
-const CarsFilterOption = () => {
+"use client";
+import { CarList } from "@/types/carsList";
+import { useEffect, useState } from "react";
+
+type CarsFilterOptionProp = {
+  carsList: CarList[];
+  setBrand: (value: string) => void;
+};
+const CarsFilterOption = ({ carsList, setBrand }: CarsFilterOptionProp) => {
+  const [brandList, setBrandList] = useState<any>();
+  const BrandSet = new Set();
+
+  useEffect(() => {
+    if (carsList) {
+      filterCarList();
+    }
+  }, [carsList]);
+  const filterCarList = () => {
+    carsList.forEach((element: CarList) => {
+      BrandSet.add(element.carBrand);
+    });
+
+    setBrandList(Array.from(BrandSet));
+  };
   return (
     <div className="mt-10 flex items-center justify-between">
       <div>
@@ -20,15 +43,15 @@ const CarsFilterOption = () => {
         <select
           className="select
             select-bordered w-full md:block max-w-xs hidden"
-          // onChange={(e) => setBrand(e.target.value)}
+          onChange={(e) => setBrand(e.target.value)}
         >
           <option disabled selected>
-            Manufactural
+            Manufacturer
           </option>
-          {/* {brandList &&
+          {brandList &&
             brandList.map((brand: string, index: number) => (
               <option key={index}>{brand}</option>
-            ))} */}
+            ))}
         </select>
       </div>
     </div>
