@@ -24,16 +24,16 @@ hover:bg-white
 hover:border-[1px] cursor-pointer duration-50
 border-blue-500 "
     >
-      <h2 className="text-[20px] font-medium mb-2">{carDetails.name}</h2>
+      <h2 className="text-[20px] font-medium mb-2">{carDetails?.name}</h2>
       <h2 className="text-[28px] font-bold mb-2">
         <span className="text-[12px] font-light">$ </span>
-        {carDetails.price}
+        {carDetails?.price}
         <span className="text-[12px] font-light"> /day</span>
       </h2>
       <div className="flex justify-center">
         <Image
-          src={carDetails.image?.url}
-          alt={carDetails.name as string}
+          src={carDetails?.image?.url}
+          alt={carDetails?.name as string}
           width={220}
           height={200}
           className="w-[250px] h-[150px]
@@ -44,19 +44,19 @@ border-blue-500 "
         <div className="text-center text-gray-500">
           <PiSteeringWheelFill className="w-full text-[22px] mb-2" />
           <h2 className="line-clamp-5 text-[14px] font-light">
-            {carDetails?.carType.substr}
+            {carDetails?.carType}
           </h2>
         </div>
         <div className="text-center text-gray-500">
           <MdAirlineSeatReclineNormal className="w-full text-[22px] mb-2" />
           <h2 className="line-clamp text-[14px] font-light">
-            {carDetails.seat} Seat
+            {carDetails?.seat} Seat
           </h2>
         </div>
         <div className=" text-center text-gray-500 ">
           <FaGasPump className="w-full text-[22px] mb-2" />
           <h2 className="line-clamp-5 text-[14px] font-light">
-            {carDetails.carAvg} MPG
+            {carDetails?.carAvg} MPG
           </h2>
         </div>
       </div>
