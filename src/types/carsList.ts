@@ -8,4 +8,5 @@ export type CarList = {
   seat?: number;
   carType?: any;
   carBrand?: any;
+  id: number;
 };

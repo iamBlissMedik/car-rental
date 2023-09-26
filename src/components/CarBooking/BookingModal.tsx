@@ -22,10 +22,9 @@ const BookingModal = ({ carDetails }: BookingModalProps) => {
           <CarCard car={carDetails} />
         </div>
         <div>
-          <Form />
+          <Form car={carDetails} />
         </div>
       </div>
-     
     </div>
   );
 };
